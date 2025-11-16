@@ -1,14 +1,17 @@
-import {Animated, View} from "react-native";
-import ScrollView = Animated.ScrollView;
+import { TouchableOpacity, View, Text, ScrollView} from "react-native";
+
 import SearchBar from "@/src/components/ui/searchBar";
 import FeatureCard from "@/src/components/ui/featureCard";
 import SectionHeader from "@/src/components/ui/sectionHeader";
 import PlantCard from "@/src/components/ui/plantCard";
 import ArticleCard from "@/src/components/ui/articleCard";
 import {useState} from "react";
+import {useRouter} from "expo-router";
 
 export default function App() {
     const [searchQuery, setSearchQuery] = useState('');
+
+    const router = useRouter();
 
     const plants = [
         {
@@ -34,7 +37,31 @@ export default function App() {
             statusColor: 'healthy',
             hasWarning: false,
             imageSource: { uri: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8fDA%3D' }
-        }
+        },
+        {
+            id: 4,
+            name: 'Monstera',
+            status: 'Healthy',
+            statusColor: 'healthy',
+            hasWarning: false,
+            imageSource: { uri: 'https://www.bspp.org.uk/wp-content/uploads/2022/11/word-image-358959-1.png' }
+        },
+        {
+            id: 5,
+            name: 'Fiddle Leaf',
+            status: 'treatment',
+            statusColor: 'warning',
+            hasWarning: true,
+            imageSource: { uri: 'https://media.istockphoto.com/id/483451251/photo/fungal-attack.jpg?s=612x612&w=0&k=20&c=PM0Lld99Io4DU6sRqemkytZUkuSF5effOJ8fhIAXwVo=' }
+        },
+        {
+            id: 6,
+            name: 'Snake Plant',
+            status: 'treatment',
+            statusColor: 'healthy',
+            hasWarning: false,
+            imageSource: { uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpERUDlvsvLfWPPwtb_a0VqiIcSgohIzl90A&s' }
+        },
     ];
 
     const articles = [
@@ -76,10 +103,16 @@ export default function App() {
                 <FeatureCard
                     title="Diagnose Your Plant"
                     description="Use your camera to identify diseases in your plants."
-                    buttonText="Scan a Leaf"
                     imageSource={{ uri: 'https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=800' }}
-                    onPress={() => console.log('Scan pressed')}
                 />
+                <View>
+                    <TouchableOpacity
+                        onPress={() => router.push('/(drawer)/(tabs)/aiDoctor')}
+                        className="bg-green-500 rounded-lg py-3 items-center mb-6"
+                    >
+                        <Text className="text-white font-semibold text-base">Scan Leaf</Text>
+                    </TouchableOpacity>
+                </View>
 
                 <SectionHeader
                     title="My Garden"

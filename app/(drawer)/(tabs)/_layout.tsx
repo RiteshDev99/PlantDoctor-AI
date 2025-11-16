@@ -10,7 +10,12 @@ export default function TabLayout() {
         <Tabs
             screenOptions={{
                 tabBarActiveTintColor: '#4cb051',
-                header: () => <CustomHeader />,
+                header: ({ route, options }) => (
+                    <CustomHeader
+                        routeName={route.name}
+                        title={options.title || route.name}
+                    />
+                ),
                 tabBarStyle: {
                     paddingBottom: insets.bottom,
                     backgroundColor:'#121212',
@@ -28,7 +33,7 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="profile"
+                name="aiDoctor"
                 options={{
                     title: 'Doctor',
                     tabBarIcon: ({ color }) => (

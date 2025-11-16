@@ -71,8 +71,8 @@ app/                     # Expo Router navigation
  ├── (drawer)/           # Drawer navigator
  │   └── (tabs)/         # Tabs inside drawer
  │       ├── _layout.tsx
- │       ├── index.tsx
- │       └── profile.jsx
+ │       ├── index.jsx
+ │       └── aiDoctor.jsx
  └── _layout.tsx         # Root layout
 
 src/
