@@ -1,13 +1,21 @@
 import { Tabs } from 'expo-router';
-import { FontAwesome6, Fontisto } from "@expo/vector-icons";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import CustomHeader from "@/src/components/customHeader";
+import {useSafeAreaInsets} from "react-native-safe-area-context";
+import Feather from '@expo/vector-icons/Feather';
 
 export default function TabLayout() {
+    const insets = useSafeAreaInsets();
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: '#154354',
+                tabBarActiveTintColor: '#4cb051',
                 header: () => <CustomHeader />,
+                tabBarStyle: {
+                    paddingBottom: insets.bottom,
+                    backgroundColor:'#121212',
+                    height: 60 + insets.bottom,
+                },
             }}
         >
             <Tabs.Screen
@@ -15,16 +23,16 @@ export default function TabLayout() {
                 options={{
                     title: 'Home',
                     tabBarIcon: ({ color }) => (
-                        <Fontisto size={20} name="compass" color={color} />
+                        <Feather name="home" size={24} color={color} />         
                     ),
                 }}
             />
             <Tabs.Screen
                 name="profile"
                 options={{
-                    title: 'Profile',
+                    title: 'Doctor',
                     tabBarIcon: ({ color }) => (
-                        <FontAwesome6 size={20} name="circle-user" color={color} />
+                        <FontAwesome5 name="microscope" size={24} color={color} />      
                     ),
                 }}
             />

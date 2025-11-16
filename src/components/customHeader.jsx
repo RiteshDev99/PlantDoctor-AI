@@ -1,22 +1,20 @@
 import { StyleSheet, View, Text,  TouchableOpacity } from "react-native";
-import { useNavigation } from "expo-router";
-import { DrawerActions } from "@react-navigation/native";
-import { EvilIcons, Ionicons } from "@expo/vector-icons";
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from "react-native-safe-area-context";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 const CustomHeader = () => {
-    const navigation = useNavigation();
 
     return (
         <SafeAreaView style={styles.safeArea} edges={['top']}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                    <Ionicons size={28} name="menu-outline" color="#fff" />
+                <View className='flex-row items-center gap-x-3' >
+                <TouchableOpacity className=' flex h-10 w-10 bg-[#fae5d4] rounded-full items-center justify-center' >
+                    <FontAwesome6 name="user" size={24} color="#f2c9b3" />
                 </TouchableOpacity>
-
-               <Text className='text-xl text-white' >Hello</Text>
-
+                    <Text className='text-xl text-[#fff]'>Good Morning, Alex</Text>
+                </View>
                 <TouchableOpacity>
-                    <EvilIcons size={30} name="search" color="#fff" />
+                    <Ionicons name="notifications-outline" size={24} color="white" />       
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -25,12 +23,12 @@ const CustomHeader = () => {
 
 const styles = StyleSheet.create({
     safeArea: {
-        backgroundColor: "#103540",
+        backgroundColor: "#121212",
     },
     header: {
         height: 56,
         width: "100%",
-        backgroundColor: "#154354",
+        backgroundColor: "#121212",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
