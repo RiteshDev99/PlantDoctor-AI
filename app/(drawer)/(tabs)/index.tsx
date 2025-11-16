@@ -17,7 +17,7 @@ export default function App() {
             status: 'Healthy',
             statusColor: 'healthy',
             hasWarning: false,
-            imageSource: { uri: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=400' }
+            imageSource: { uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqK7awHfreuNem8DGGseQd0eQ25VMbu96LqQ&s' }
         },
         {
             id: 2,
@@ -33,7 +33,7 @@ export default function App() {
             status: 'Healthy',
             statusColor: 'healthy',
             hasWarning: false,
-            imageSource: { uri: 'https://images.unsplash.com/photo-1593482892290-f54927ae1bb8?w=400' }
+            imageSource: { uri: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8fDA%3D' }
         }
     ];
 
@@ -49,7 +49,19 @@ export default function App() {
             title: 'Winter Care for Succulents',
             description: 'Learn how to protect your succulents during the colder months.',
             imageSource: { uri: 'https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=400' }
-        }
+        },
+        {
+            id: 3,
+            title: 'Preventing Powdery Mildew',
+            description: 'Keep your plants healthy with these simple tips and tricks.',
+            imageSource: { uri: 'https://www.thespruce.com/thmb/Pum0gNBUFzzV01rrKYKqMJrVGRY=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc()/SPR-houseplants-grown-in-water-4177520-hero-264670857d8b4c68a66b6d63c20e179e.jpg' }
+        },
+        {
+            id: 4,
+            title: 'Winter Care for Succulents',
+            description: 'Learn how to protect your succulents during the colder months.',
+            imageSource: { uri: 'https://masonhome.in/cdn/shop/files/244_3f0104fd-5f53-446e-8751-b50d5c413b8e.png?v=1752051288&width=1100' }
+        },
     ];
 
     return (
